@@ -72,3 +72,18 @@ insert into employee_hobby_assign (id_employee,id_hobby) values (4,3)
 insert into employee_hobby_assign (id_employee,id_hobby) values (4,1)
 
 select * from employee_hobby_assign
+
+CREATE TABLE employee_boss
+(id bigint PRIMARY KEY,
+id_employee bigint,
+CONSTRAINT fk_employee_boss FOREIGN KEY (id_employee) REFERENCES employee (id));
+
+CREATE TABLE employee_boss_assign
+(id_boss bigint,
+id_employee bigint PRIMARY KEY);
+
+insert into employee_boss (id,id_employee) values (1,4)
+
+insert into employee_boss_assign(id_boss,id_employee) values (1,2)
+insert into employee_boss_assign(id_boss,id_employee) values (1,3)
+insert into employee_boss_assign(id_boss,id_employee) values (1,4)
