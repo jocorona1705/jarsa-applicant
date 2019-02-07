@@ -47,3 +47,28 @@ insert into employee_department_assign (id_employee,id_department) values (3,2)
 insert into employee_department_assign (id_employee,id_department) values (4,3)
 
 select * from employee_department_assign
+
+CREATE TABLE employee_hobby
+(id bigint PRIMARY KEY,
+name varchar(50),
+description varchar(MAX));
+
+CREATE TABLE employee_hobby_assign
+(id_employee bigint,
+id_hobby bigint,
+CONSTRAINT fk_employee_hobby FOREIGN KEY (id_employee) REFERENCES employee (id));
+
+insert into employee_hobby (id,name,description) values (1,'READ','reading books and web pages')
+insert into employee_hobby (id,name,description) values (2,'WRITE','writing texts on websites and forums')
+insert into employee_hobby (id,name,description) values (3,'RUN','run in the morning')
+
+insert into employee_hobby_assign (id_employee,id_hobby) values (1,1)
+insert into employee_hobby_assign (id_employee,id_hobby) values (1,2)
+insert into employee_hobby_assign (id_employee,id_hobby) values (2,3)
+insert into employee_hobby_assign (id_employee,id_hobby) values (2,1)
+insert into employee_hobby_assign (id_employee,id_hobby) values (3,1)
+insert into employee_hobby_assign (id_employee,id_hobby) values (3,2)
+insert into employee_hobby_assign (id_employee,id_hobby) values (4,3)
+insert into employee_hobby_assign (id_employee,id_hobby) values (4,1)
+
+select * from employee_hobby_assign
